@@ -7,8 +7,8 @@ app=Flask(__name__)
 def index(name="Shobi"):
 	return "Hello {}".format(name)
 
-@app.route('/add/<num1>/<num2>')
+@app.route('/add/<int:num1>/<int:num2>')
 def add(num1,num2):
-	return "{} + {} = {}".format(num1,num2,int(num1)+int(num2))
+	return "{} + {} = {}".format(num1,num2,num1+num2)
 
 app.run(debug=True, port=8000)
